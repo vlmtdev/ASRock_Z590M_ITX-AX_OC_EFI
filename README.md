@@ -23,7 +23,7 @@ EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 
 - [x] AMD RX570 HDMI/DP OUTPUT with audio 
 - [x] ALC 897 AUDIO (Sound, Mic)
-- [x] All USB Ports, ports mapped
+- [x] USB Ports, ports mapped (I don't use internal ports, you need to remap ports if necessary)
 - [x] Sleep, Wake, Speedstep
 - [x] 1° CONTROLLER NVME PciE Gen4x4
 - [x] 2° CONTROLLER NVME PciE Gen3x4
@@ -56,6 +56,30 @@ EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 * Boot From Onboard LAN
 * CSM
 * IGPU Multi-Monitor
+
+## Windows 10 dual-boot:
+You need to install rEFInd with [this guide](https://github.com/dortania/Hackintosh-Mini-Guides/blob/master/refind.md), because booting Windows from Opencore is not good.
+My refind.conf:
+```
+timeout 10
+
+menuentry "Apple" {
+    icon \EFI\refind\icons\os_mac.png
+    volume 0E239BC6-F960-3107-89CF-1C97F78BB46B
+    loader /EFI/OC/OpenCore.efi
+}
+menuentry "Shindows" {
+    icon \EFI\refind\icons\os_win8.png
+    volume 63A2FC5D-4F50-46ED-8DAD-B0AF52E2AEDC
+    loader \EFI\Microsoft\Boot\bootmgfw.efi
+}
+menuentry "EFI Shell" {
+    icon \EFI\refind\icons\tool_shell.png
+    loader \EFI\tools\Shell_Full.efi
+}
+
+scanfor manual,external
+```
 
 ## Credits
 
