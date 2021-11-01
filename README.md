@@ -1,4 +1,4 @@
-# ASRock_Z590M_ITX-AX_i5-11600K_RX570 Hackintosh
+# ASRock_Z590M_ITX-AX_i5-11600K_RX5500XT Hackintosh
 
 EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 
