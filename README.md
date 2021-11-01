@@ -7,21 +7,21 @@ EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 | Component        | Brank                              |
 | ---------------- | ---------------------------------- |
 | CPU              | Intel Core i5 11600K               |
-| GPU              | AMD RX570 4GB                      |
+| GPU              | PowerColor RX 5500 XT 4GB          |
 | Lan 2.5GBE       | Realtek 8125                       |
 | Lan 1GBE         | Intel I219 V11                     |
 | Audio            | Realtek ALC897                     |
 | Ram              | 64GB DDR4 3200 MHz                 |
 | Wireless.        | INTEL AX210                        |
 | 1° NVMe SSD      | SPCC M.2 1TB                       |
-| SmBios           | iMac 20,1                          |
+| SmBios           | iMacPro1,1                         |
 | BootLoader       | OpenCore 0.7.4                     |
 | macOS            | 10.15.7, also tested 11.6 BigSur   |
 
 
 ### Works:
 
-- [x] AMD RX570 HDMI/DP OUTPUT with audio 
+- [x] AMD RX 5500 XT HDMI/DP OUTPUT with audio, also PowerPlayTables injected to turn off ZeroRPM mode
 - [x] ALC 897 AUDIO (Sound, Mic)
 - [x] USB Ports, ports mapped (I don't use internal ports, you need to remap ports if necessary)
 - [x] Sleep, Wake, Speedstep
