@@ -1,4 +1,4 @@
-# ASRock_Z590M_ITX-AX_i5-11600K_RX570 Hackintosh
+# ASRock_Z590M_ITX-AX_i5-11600K Hackintosh
 
 EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 
@@ -7,21 +7,21 @@ EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 | Component        | Brank                              |
 | ---------------- | ---------------------------------- |
 | CPU              | Intel Core i5 11600K               |
-| GPU              | PowerColor RX 5500 XT 4GB          |
+| GPU              | PowerColor RX 6600 XT 8GB          |
 | Lan 2.5GBE       | Realtek 8125                       |
 | Lan 1GBE         | Intel I219 V11                     |
 | Audio            | Realtek ALC897                     |
 | Ram              | 64GB DDR4 3200 MHz                 |
 | Wireless.        | INTEL AX210                        |
-| 1° NVMe SSD      | SPCC M.2 1TB                       |
+| 1° NVMe SSD      | Corsair MP600 PRO 2TB              |
 | SmBios           | iMacPro1,1                         |
-| BootLoader       | OpenCore 0.7.4                     |
-| macOS            | 10.15.7, also tested 11.6 BigSur   |
+| BootLoader       | OpenCore 0.7.7                     |
+| macOS            | Monterey 12.2.1                    |
 
 
 ### Works:
 
-- [x] AMD RX 5500 XT HDMI/DP OUTPUT with audio, also PowerPlayTables injected to turn off ZeroRPM mode
+- [x] AMD RX 6600 XT HDMI/DP OUTPUT
 - [x] ALC 897 AUDIO (Sound, Mic)
 - [x] USB Ports, ports mapped (I don't use internal ports, you need to remap ports if necessary)
 - [x] Sleep, Wake, Speedstep
@@ -31,10 +31,11 @@ EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 - [x] All Sensors (CPU, GPU, NVME, SATA, FANS)
 - [x] Realtek RTL8125 LAN
 - [x] Intel I219 V11 LAN
+- [x] INTEL AX210 Wi-Fi (AirportItwlm.kext for native support)
 - [x] NVRAM
 
 ### Not working:
-- [ ] INTEL AX210 Wireless (not supported by itwlm at this moment)
+- [ ] INTEL AX210 Bluetooth (use USB dongle instead of)
 
 ### MacOS bootable USB creation:
 - Read the Dortania guide for creating your USB from Windows or macOS
