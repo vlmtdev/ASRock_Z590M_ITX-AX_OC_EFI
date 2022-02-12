@@ -7,7 +7,7 @@ EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 | Component        | Brank                              |
 | ---------------- | ---------------------------------- |
 | CPU              | Intel Core i5 11600K               |
-| GPU              | PowerColor RX 6600 XT 8GB          |
+| GPU              | ASRock RX 6600 XT 8GB              |
 | Lan 2.5GBE       | Realtek 8125                       |
 | Lan 1GBE         | Intel I219 V11                     |
 | Audio            | Realtek ALC897                     |
