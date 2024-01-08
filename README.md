@@ -2,6 +2,8 @@
 
 EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 
+![About](images/about.png)
+
 ### Specs:
 
 | Component        | Brank                              |
@@ -12,11 +14,11 @@ EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 | Lan 1GBE         | Intel I219 V11                     |
 | Audio            | Realtek ALC897                     |
 | Ram              | 64GB DDR4 3200 MHz                 |
-| Wireless.        | INTEL AX210                        |
+| Wireless.        | Broadcom BCM94360NG                |
 | 1° NVMe SSD      | Corsair MP600 PRO 2TB              |
 | SmBios           | iMacPro1,1                         |
-| BootLoader       | OpenCore 0.7.7                     |
-| macOS            | Monterey 12.2.1                    |
+| BootLoader       | OpenCore 0.9.7                     |
+| macOS            | Sonoma 14.2.1                      |
 
 
 ### Works:
@@ -31,11 +33,26 @@ EFI for ASROCK Z590M ITX/AX with OpenCore bootloader
 - [x] All Sensors (CPU, GPU, NVME, SATA, FANS)
 - [x] Realtek RTL8125 LAN
 - [x] Intel I219 V11 LAN
-- [x] INTEL AX210 Wi-Fi (AirportItwlm.kext for native support)
+- [x] Broadcom BCM94360NG WiFi+BT
 - [x] NVRAM
 
-### Not working:
-- [ ] INTEL AX210 Bluetooth (use USB dongle instead of)
+### macOS Sonoma Wi-Fi issues
+As you may know, all socketed Broadcom Wifi cards became unsupported after Sonoma release. But I've restored it's functionality including various functions such as Airdrop, etc...  
+For Wi-Fi, I've followed this guide (https://github.com/dortania/OpenCore-Legacy-Patcher/pull/1077) from "Hackintosh notes".
+
+### Filevault and root patches issues
+As described above, you have to apply OLCP root patches. But OLCP requires Filevault to be disabled. So before applying root patches, you should completely decrypt your drive.
+
+### After root patching, can't turn on FileVault back, tells me that password is incorrect!
+Yes, you should workaround it by adding new boot arg (-arv_allow_fv) (already added here) and add kernel patch for filevault override (already added here too)
+
+### But system update will revert root patches back to stock state!
+Yes, update process is more complicated than before, on Monterey. I haven't installed any minor Sonoma updated yet, but that workflow should be valid:
+- Disable FileVault and decrypt drive completely
+- Revert root patches
+- Update system
+- Install root patches
+- Enable FileVault and encrypt drive
 
 ### MacOS bootable USB creation:
 - Read the Dortania guide for creating your USB from Windows or macOS
